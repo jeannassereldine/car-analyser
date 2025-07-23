@@ -1,9 +1,9 @@
 import base64
 from fastapi import UploadFile
 from langchain_core.messages import SystemMessage, HumanMessage
-from models import Car
-from llm import model  # Must point to your structured LangChain-compatible model
-from utils import encode_image_as_data_url
+from models.car_model import Car
+from llms.llm import model  # Must point to your structured LangChain-compatible model
+from utils.utils import encode_image_as_data_url
 
 async def analyze_car_image(image: UploadFile) -> Car:
     image_bytes = await image.read()
